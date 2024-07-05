@@ -1,0 +1,16 @@
+.blog-info {
+  text-align: center;
+  margin-top: 5%;
+  border-radius: 1px;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: brown;
+  margin: 200px;
+  padding: 20px;
+}
+.name {
+  font-family: Roboto;
+}
+.blog-content {
+  font-style: italic;
+}
