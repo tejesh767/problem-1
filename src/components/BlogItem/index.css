@@ -2,8 +2,8 @@
 /* Write your CSS here */
 .repository-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   flex-basis: 100%;
   background-color: #f8f8ff;
   border-radius: 24px;
