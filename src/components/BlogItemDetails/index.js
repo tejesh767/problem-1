@@ -14,9 +14,8 @@ class BlogItemDetails extends Component {
     const {params} = match
     const {userId} = params
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${userId}`,
+      `https://jsonplaceholder.typicode.com/posts/${userId}/comments`,
     )
-
     const updatedData = await response.json()
     console.log(updatedData)
     this.setState({blogData: updatedData})
@@ -24,18 +23,24 @@ class BlogItemDetails extends Component {
 
   renderBlogItemDetails = () => {
     const {blogData} = this.state
-    const {name, username, phone, website, email, address} = blogData
 
     return (
       <div className="blog-info">
-        <h2 className="name">{name}</h2>
+        <ul className="">
+          {blogData.map(each => (
+            <>
+              <h2 className="name">name : {each.name}</h2>
 
-        <div className="author-details">
-          <p className="blog-content">username : {username}</p>
-          <p className="blog-content">phone : {phone}</p>
-          <p className="blog-content">website : {website}</p>
-          <p className="blog-content">email : {email}</p>
-        </div>
+              <p className="blog-content">email : {each.email}</p>
+
+              <p className="blog-content">postId : {each.postId}</p>
+
+              <p className="blog-content">
+                commentId {each.id} : {each.body}
+              </p>
+            </>
+          ))}
+        </ul>
       </div>
     )
   }
