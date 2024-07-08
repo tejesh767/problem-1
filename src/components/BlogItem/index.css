@@ -12,6 +12,10 @@
   padding: 24px;
 }
 
+.name {
+  font-style: italic;
+}
+
 @media (min-width: 576px) {
   .repository-item {
     flex-basis: 45%;
